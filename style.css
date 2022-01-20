@@ -1,0 +1,92 @@
+body {
+    font-family: 'Montserrat';font-size: 22px;
+    background: #cccccc;
+}
+
+p{
+    font-size: 16px;
+}
+
+.card-body {
+    background-color:#f7f7f7;
+}
+
+#color-square {
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+  }
+
+#items{
+    cursor: pointer;
+}
+
+.input-group .button{
+    width: 26px;
+    height: 26px;
+    border: 1px solid #f4f4f4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    color: #3b3b3b;
+}
+
+.input-field{
+    font-size: 16px;
+    width: 50px;
+    height: 26px;
+    border: none;
+    background-color: #f4f4f4;
+}
+
+.input-group .button:active {
+    background-color: #495057;
+}
+
+/* Cart */
+.cartItemQty, .proceed{
+    background: #f4f4f4;
+}
+
+.color-box {
+    height: 20px;
+    width: 20px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+  }
+
+.input-field-cart{
+    font-size: 16px;
+    width: 50px;
+    height: 26px;
+    border: none;
+}
+
+.input-group .button-cart{
+    width: 26px;
+    height: 26px;
+    border: 1px solid #f4f4f4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    color: #3b3b3b;
+}
+
+.color-box:hover{
+    cursor: pointer;
+}
+
+/* .color-box:active {
+    border: 2px solid rgb(0, 217, 255);
+} */
