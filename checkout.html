@@ -13,7 +13,7 @@
     <title>Checkout</title>
 </head>
 <body class="bg-light">
-<div class="container">
+<div class="container my-5">
     <main>           
         <div class="row g-5">
             <div class="col-md-5 col-lg-4 order-md-last">
@@ -214,20 +214,58 @@
       
                 <hr class="my-4">
       
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="check()">Continue to checkout</button>
               </form>
             </div>
           </div>
     </main>
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">© 2017–2021 ACES Thrift</p>
-        <ul class="list-inline">
+        <p style="font-size: 10px;" class="mb-1">© 2017–2021 ACES Thrift</p>
+        <ul style="font-size: 10px;" class="list-inline">
           <li class="list-inline-item"><a href="#">Privacy</a></li>
           <li class="list-inline-item"><a href="#">Terms</a></li>
           <li class="list-inline-item"><a href="#">Support</a></li>
         </ul>
     </footer>
 </div>
+
+
+    <script>
+      function check(){
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var username = document.getElementById('username').value;
+        var address = document.getElementById('address').value;
+        var country = document.getElementById('country').value;
+        var state = document.getElementById('state').value;
+        var zip = document.getElementById('zip').value;
+        var cc_name = document.getElementById('cc-name').value;
+        var cc_number = document.getElementById('cc-number').value;
+        var cc_expiration = document.getElementById('cc-expiration').value;
+        var cc_cvv = document.getElementById('cc-cvv').value;
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(username);
+        console.log(address);
+        console.log(country);
+        console.log(state);
+        console.log(zip);
+        console.log(cc_name);
+        console.log(cc_number);
+        console.log(cc_expiration);
+        console.log(cc_cvv);
+
+        if(firstName === "" || lastName === "" || username === "" || address === "" || country === "" || state === "" || zip === "" || cc_name === "" ||
+        cc_number === "" || cc_expiration === "" || cc_cvv === ""){
+          alert('Please fill the form completely');
+        } else if (firstName !== "" && lastName !== "" && username !== "" && address !== "" && country !== "" && state !== "" && zip !== "" && cc_name !== "" &&
+        cc_number !== "" && cc_expiration !== "" && cc_cvv !== "") {
+          alert('Thank you for your purchase!, your item will be sent shortly');
+        }
+      }
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
