@@ -280,9 +280,7 @@
                 </div>
                 <div class="col-4">
                   <div class="input-group my-0 d-flex flex-row">
-                    <div class="dec button-cart" id="decbutton">-</div>
-                    <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                    <div class="inc button-cart" id="incbutton">+</div>
+                    <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                   </div>
                 </div>
                 <div class="col-3">
@@ -322,9 +320,7 @@
                 </div>
                 <div class="col-4">
                   <div class="input-group my-0 d-flex flex-row">
-                    <div class="dec button-cart" id="decbutton">-</div>
-                    <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                    <div class="inc button-cart" id="incbutton">+</div>
+                    <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                   </div>
                 </div>
                 <div class="col-3">
@@ -364,9 +360,7 @@
                 </div>
                 <div class="col-4">
                   <div class="input-group my-0 d-flex flex-row">
-                    <div class="dec button-cart" id="decbutton">-</div>
-                    <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                    <div class="inc button-cart" id="incbutton">+</div>
+                    <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                   </div>
                 </div>
                 <div class="col-3">
@@ -407,7 +401,7 @@
                 <div class="col-4">
                   <div class="input-group my-0 d-flex flex-row">
                     <div class="dec button-cart " id="decbutton">-</div>
-                    <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center ">
+                    <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center ">
                     <div class="inc button-cart " id="incbutton">+</div>
                   </div>
                 </div>
@@ -426,54 +420,6 @@
       </div>
     </div>
     <!-- End of Modal -->
-    
-    <!-- <script>
-      // INCREMENT & DECREMENT
-      var decrementButton = document.getElementsByClassName('dec');
-      var incrementButton = document.getElementsByClassName('inc');
-      // console.log(decrementButton);
-      // console.log(incrementButton);
-
-      //increment
-      for(var i = 0; i < incrementButton.length; i++){
-      var button = incrementButton[i];
-      button.addEventListener('click', function(event){
-
-          var buttonClicked = event.target;
-          // console.log(buttonClicked);
-          var input = buttonClicked.parentElement.children[1];
-          // console.log(input);
-          var inputValue = input.value;
-          // console.log(inputValue);
-          var newValue = parseInt(inputValue) + 1;
-          // console.log(newValue);
-          input.value = newValue;
-
-        })
-      }
-
-      //decrement
-      for(var i = 0; i < decrementButton.length; i++){
-      var button = decrementButton[i];
-      button.addEventListener('click', function(event){
-
-          var buttonClicked = event.target;
-          // console.log(buttonClicked);
-          var input = buttonClicked.parentElement.children[1];
-          // console.log(input);
-          var inputValue = input.value;
-          // console.log(inputValue);
-          var newValue = parseInt(inputValue) - 1;
-          // console.log(newValue);
-          if(newValue >= 0) {
-            input.value = newValue;
-          }
-          else {
-            inputValue = 0;
-          }
-        })
-      }
-    </script> -->
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" 
