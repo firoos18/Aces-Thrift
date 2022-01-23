@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" async></script>
+    <script src="cart2.js" async></script>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" 
     integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -64,15 +67,15 @@
             <h2 class="py-4">MEN</h2>
             <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-start">
                 <div class="container">
-                    <img src="img/navy-jacket.jpg" alt="" class="img-fluid w-75">
+                    <img src="img/navy-jacket.jpg" alt="" class="cart-image img-fluid w-75">
                 </div>
                 <div class="container my-3 ms-0">
-                    <h4>Navy Jacket</h4>
+                    <h4 class="cart-title">Navy Jacket</h4>
                     <p style="font-size: 14px;">A casual choice to attend any kind of meeting</p>
-                    <h5>Rp699.000</h6>
+                    <h5 class="cart-price">Rp699.000</h6>
                       <div class="d-grid gap-2 col-12 col-sm-6 mx-0">
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#buy1" ><i class="bi bi-bag"></i> Buy Now!</button>
-                        <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+                        <button type="button" id="addToCartButton" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
                         <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i> Add to Favorites!</button>
                       </div>
                 </div>
@@ -149,104 +152,102 @@
 
     <!-- Modal Cart -->
     <section>
-    <div class="modal fade" id="carts" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <h5>Item List</h5>
-            <div class="container-fluid my-3">
-              <div class="row align-items-start">
-                
-                <div class="col-12 col-lg-8 items">
-                  <!-- Item 1 -->
-                  <div class="row align-items-start">
-                    <div class="col-3 mb-2">
-                      <img src="img/tank-top.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-2 mb-2">
-                      <h6>Tank Top</h6>
-                      <h6 style="font-size: 14px;">Color :</h6>
-                      <p class="color-box" style="background-color: #555;"></p>
-                    </div>
-                    <div class="col-4">
-                      <div class="input-group my-0 d-flex flex-row">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+      <div class="modal fade" id="carts" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h5>Item List</h5>
+              <div class="container-fluid my-3">
+                <div class="row align-items-start">
+                  
+                  <div class="cart-items col-12 col-lg-8">
+                    <!-- Item 1 -->
+                    <!-- <div class="cart-row row align-items-start">
+                      <div class="col-3 mb-2">
+                        <img src="img/tank-top.jpg" class="img-fluid" alt="">
+                      </div>
+                      <div class="col-2 mb-2">
+                        <h6 class="cart-title">Tank Top</h6>
+                        <h6 style="font-size: 14px;">Color :</h6>
+                        <p class="color-box" style="background-color: #555;"></p>
+                      </div>
+                      <div class="col-4">
+                        <div class="input-group my-0 d-flex flex-row">
+                          <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
+                        </div>
+                        <button type="button" class="removebtn btn btn-danger btn-sm my-2" id="removeCartButton"><i class="bi bi-trash"></i> Remove</button>
+                      </div>
+                      <div class="col-3">
+                        <p id="cartItemprice" class="cartPrice">Rp259.000</p>
+                      </div>
+                    </div> -->
+  
+                    <!-- Item 2 -->
+                    <!-- <div class="cart-row row align-items-start">
+                      <div class="col-3 mb-2">
+                        <img src="img/jacket.jpg" class="img-fluid" alt="">
+                      </div>
+                      <div class="col-2 mb-2">
+                        <h6 class="cart-title">Tank Top</h6>
+                        <h6 style="font-size: 14px;">Color :</h6>
+                        <p class="color-box" style="background-color: rgb(216, 175, 175);"></p>
+                      </div>
+                      <div class="col-4">
+                        <div class="input-group my-0 d-flex flex-row">
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
+                        </div>
+                        <button type="button" class="removebtn btn btn-danger btn-sm my-2" id="removeCartButton"><i class="bi bi-trash"></i> Remove</button>
+                      </div>
+                      <div class="col-3">
+                        <p id="cartItemprice" class="cartPrice">Rp259.000</p>
                       </div>
                     </div>
-                    <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
-                    </div>
-                  </div>
-
-                  <!-- Item 2 -->
-                  <div class="row align-items-start">
-                    <div class="col-3 mb-2">
-                      <img src="img/jacket.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-2 mb-2">
-                      <h6>Tank Top</h6>
-                      <h6 style="font-size: 14px;">Color :</h6>
-                      <p class="color-box" style="background-color: rgb(216, 175, 175);"></p>
-                    </div>
-                    <div class="col-4">
-                      <div class="input-group my-0 d-flex flex-row">
-                      <div class="dec button-cart" id="decbutton">-</div>
-                      <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                      <div class="inc button-cart" id="incbutton">+</div>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
-                    </div>
-                  </div>
+                  </div> -->
+  
+                  
                 </div>
-
                 <!-- Pricetotal -->
                 <div class="col-12 col-lg-4 p-3 proceed form">
                 <div class="row m-0">
                   <div class="col-sm-8 p-0">
                     <h6>Subtotal</h6>
                   </div>
-                  <div class="col-sm-4 p-0">
-                    <p id="subtotal">Rp518.000</p>
+                  <div class="cartSubtotal col-sm-4 p-0">
+                    <p id="subtotal">Rp0</p>
                   </div>
                 </div>
                 <div class="row m-0">
                   <div class="col-sm-8 p-0">
                     <h6>Tax</h6>
                   </div>
-                  <div class="col-sm-4 p-0">
-                    <p id="tax">Rp25.900</p>
+                  <div class="cartTax col-sm-4 p-0">
+                    <p id="tax">Rp0</p>
                   </div>
                 </div>
                 <div class="row mb-2 mx-0">
                   <div class="col-sm-8 p-0">
                     <h5>Total</h5>
                   </div>
-                  <div class="col-sm-4 p-0">
-                    <p id="total">Rp543.900</p>
+                  <div class="cartTotal col-sm-4 p-0">
+                    <p id="total">Rp0</p>
                   </div>
                 </div>
                 </div>
-
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html' ">Checkout</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html' ">Checkout</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-    <!-- End of Cart Modal -->
+    </section>
+      <!-- End of Cart Modal -->
 
     <!-- Item Modal -->
     <!-- Item 1 -->
@@ -264,22 +265,20 @@
               <div class="col-12 items">
               <div class="row align-items-start mb-5 mt-3">
                   <div class="col-3 mb-2">
-                      <img src="img/navy-jacket.jpg" class="img-fluid w-100" alt="">
+                      <img src="img/navy-jacket.jpg" class="cart-image img-fluid w-100" alt="">
                   </div>
                   <div class="col-2 mb-2">
-                      <h6>Navy Jacket</h6>
-                      <p>Color :</p>
+                      <h5 class="cart-title">Navy Jacket</h5>
+                      <h6 style="font-size: 14px;">Color :</h6>
                       <div class="color-box" style="background-color: navy;"></div>
                   </div>
                   <div class="col-4">
                     <div class="input-group my-0 d-flex flex-row">
-                      <div class="dec button-cart" id="decbutton">-</div>
-                      <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                      <div class="inc button-cart" id="incbutton">+</div>
+                      <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                     </div>
                   </div>
                   <div class="col-3">
-                    <p id="cartItemprice">Rp259.000</p>
+                    <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                   </div>
               </div>
             </div>
@@ -307,22 +306,20 @@
                 <div class="col-12 items">
                 <div class="row align-items-start mb-5 mt-3">
                     <div class="col-3 mb-2">
-                        <img src="img/t-shirt.jpg" class="img-fluid w-100" alt="">
+                        <img src="img/t-shirt.jpg" class="cart-image img-fluid w-100" alt="">
                     </div>
                     <div class="col-2 mb-2">
-                        <h6>Shirt</h6>
-                        <p>Color :</p>
+                        <h5 class="cart-title">Shirt</h5>
+                        <h6 style="font-size: 14px;">Color :</h6>
                         <div class="color-box" style="background-color: black;"></div>
                     </div>
                     <div class="col-4">
                       <div class="input-group my-0 d-flex">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                       </div>
                     </div>
                     <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
+                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                     </div>
                 </div>
               </div>
@@ -330,7 +327,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
-              <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+              <button type="button" id="addToCartButton" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
               <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
@@ -351,11 +348,11 @@
                 <div class="col-12 items">
                 <div class="row align-items-start mb-5 mt-3">
                     <div class="col-3 mb-2">
-                        <img src="img/shirt.jpg" class="img-fluid w-100" alt="">
+                        <img src="img/shirt.jpg" class="cart-image img-fluid w-100" alt="">
                     </div>
                     <div class="col-2 mb-2">
-                        <h6>Shirt</h6>
-                        <p>Color :</p>
+                        <h5 class="cart-title">T-Shirt</h5>
+                        <h6 style="font-size: 14px;">Color :</h6>
                         <div class="d-flex flex-row color-box-container">
                             <div class="color-box" id="child1" style="background-color: #555;"></div>
                             <div class="color-box" id="child2" style="background-color: rgb(216, 175, 175);"></div>
@@ -365,13 +362,11 @@
                     </div>
                     <div class="col-4">
                       <div class="input-group my-0 d-flex flex-row">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                       </div>
                     </div>
                     <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
+                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                     </div>
                 </div>
               </div>
@@ -379,7 +374,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
-              <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+              <button type="button" id="addToCartButton" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
               <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
@@ -400,11 +395,11 @@
                 <div class="col-12 items">
                 <div class="row align-items-start mb-5 mt-3">
                     <div class="col-3 mb-2">
-                        <img src="img/shirt2.jpg" class="img-fluid w-100" alt="">
+                        <img src="img/shirt2.jpg" class="cart-image img-fluid w-100" alt="">
                     </div>
                     <div class="col-2 mb-2">
-                        <h6>Shirt</h6>
-                        <p>Color :</p>
+                        <h5 class="cart-title">Cardigan</h5>
+                        <h6 style="font-size: 14px;">Color :</h6>
                         <div class="d-flex flex-row color-box-container">
                             <div class="color-box" id="child1" style="background-color: rgb(22, 21, 21);"></div>
                             <div class="color-box" id="child2" style="background-color: rgb(153, 238, 253);"></div>
@@ -414,13 +409,11 @@
                     </div>
                     <div class="col-4">
                       <div class="input-group my-0 d-flex flex-row">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                       </div>
                     </div>
                     <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
+                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                     </div>
                 </div>
               </div>
@@ -428,7 +421,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
-              <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+              <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
               <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
@@ -449,11 +442,11 @@
                 <div class="col-12 items">
                 <div class="row align-items-start mb-5 mt-3">
                     <div class="col-3 mb-2">
-                        <img src="img/tank-top.jpg" class="img-fluid w-100" alt="">
+                        <img src="img/tank-top.jpg" class="cart-image img-fluid w-100" alt="">
                     </div>
                     <div class="col-2 mb-2">
-                        <h5>Shirt</h5>
-                        <h6>Color :</h6>
+                        <h5 class="cart-title">Tank Top</h5>
+                        <h6 style="font-size: 14px;">Color :</h6>
                         <div class="d-flex flex-row color-box-container">
                             <div class="color-box" id="child1" style="background-color: #555;"></div>
                             <div class="color-box" id="child2" style="background-color: rgb(189, 181, 181);"></div>
@@ -462,13 +455,11 @@
                     </div>
                     <div class="col-4">
                       <div class="input-group my-0 d-flex flex-row">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                       </div>
                     </div>
                     <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
+                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                     </div>
                 </div>
               </div>
@@ -476,7 +467,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
-              <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+              <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
               <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
@@ -497,11 +488,11 @@
                 <div class="col-12 items">
                 <div class="row align-items-start mb-5 mt-3">
                     <div class="col-3 mb-2">
-                        <img src="img/jacket.jpg" class="img-fluid w-100" alt="">
+                        <img src="img/jacket.jpg" class="cart-image img-fluid w-100" alt="">
                     </div>
                     <div class="col-2 mb-2">
-                        <h6>Shirt</h6>
-                        <p>Color :</p>
+                        <h5 class="cart-title">Jacket</h5>
+                        <h6 style="font-size: 14px;">Color :</h6>
                         <div class="d-flex flex-row color-box-container">
                             <div class="color-box" id="child1" style="background-color: #555;"></div>
                             <div class="color-box" id="child2" style="background-color: rgb(216, 175, 175);"></div>
@@ -511,13 +502,11 @@
                     </div>
                     <div class="col-4">
                       <div class="input-group my-0 d-flex flex-row">
-                        <div class="dec button-cart" id="decbutton">-</div>
-                        <input type="text" name="qty" value="1" class="input-field-cart cartItemQty text-center">
-                        <div class="inc button-cart" id="incbutton">+</div>
+                        <input type="number" name="qty" value="1" class="input-field-cart cartItemQty text-center">
                       </div>
                     </div>
                     <div class="col-3">
-                      <p id="cartItemprice">Rp259.000</p>
+                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
                     </div>
                 </div>
               </div>
@@ -525,7 +514,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
-              <button type="button" class="btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
+              <button type="button" id="addToCartButton" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
               <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
@@ -597,7 +586,8 @@
 	
       </script>
 
-    <script src="index.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

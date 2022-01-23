@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat';font-size: 22px;
+    font-family: 'Montserrat';
     background: #cccccc;
 }
 
@@ -64,7 +64,7 @@ p{
 
 .input-field-cart{
     font-size: 16px;
-    width: 50px;
+    width: 93px;
     height: 26px;
     border: none;
 }
@@ -86,7 +86,3 @@ p{
 .color-box:hover{
     cursor: pointer;
 }
-
-/* .color-box:active {
-    border: 2px solid rgb(0, 217, 255);
-} */
