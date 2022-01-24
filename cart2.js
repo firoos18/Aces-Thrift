@@ -61,8 +61,6 @@ function addItemToCart(title, price, imgSrc){
     </div>
     <div class="col-2 mb-2">
       <h6 class="cart-title">${title}</h6>
-      <h6 style="font-size: 14px;">Color :</h6>
-      <p class="color-box" style="background-color: #555;"></p>
     </div>
     <div class="col-4">
       <div class="input-group my-0 d-flex flex-row">

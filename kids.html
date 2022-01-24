@@ -7,6 +7,7 @@
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" async></script>
     <script src="cart2.js" async></script>
@@ -49,7 +50,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="#" class="navbar-brand" 
                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Favorites">
-                            <i class="bi bi-heart position-relative top-50 end-0 me-5 translate-middle mx-5 h4 d-none d-sm-block"></i></a>
+                            <i data-bs-toggle="modal" data-bs-target="#favorite" class="bi bi-heart position-relative top-50 end-0 me-5 translate-middle mx-5 h4 d-none d-sm-block"></i></a>
                         </li>
                         <li class="nav-item"><a style="cursor: pointer;" class="navbar-brand" 
                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shopping Cart">
@@ -71,11 +72,11 @@
                 <div class="container my-3 ms-0">
                     <h4 class="cart-title">Formal Jumpsuit</h4>
                     <p style="font-size: 14px;">The best choice for formal events</p>
-                    <h5 class="cart-price">Rp699.000</h6>
+                    <h5 class="cart-price">Rp599.000</h6>
                       <div class="d-grid gap-2 col-12 col-sm-6 mx-0">
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#buy1"><i class="bi bi-bag"></i> Buy Now!</button>
                         <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-                        <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i> Add to Favorites!</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i> Add to Favorites!</button>
                       </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@
                                 <h5 id="color-square" style="background-color: rgb(82, 85, 252);"></h5>
                             </div>
                             <h4 class="pt-2">Sweatshirt</h5>
-                            <p style="font-size: 16px;">Rp259.000</p>
+                            <p style="font-size: 16px;">Rp359.000</p>
                             </div>
                             <!-- Item 1 -->
                             <div id="items" data-bs-toggle="modal" data-bs-target="#buy3" class="container">
@@ -116,7 +117,7 @@
                                     <h5 id="color-square" style="background-color: rgb(195, 241, 183);"></h5>
                                 </div>
                                 <h4 class="pt-2">Warm Shirt</h5>
-                                <p style="font-size: 16px;">Rp259.000</p>
+                                <p style="font-size: 16px;">Rp389.000</p>
                             </div>
                             <!-- Item 3 -->
                             <div id="items" data-bs-toggle="modal" data-bs-target="#buy5" class="container">
@@ -127,7 +128,7 @@
                                     <h5 id="color-square" style="background-color: rgb(12, 73, 187);"></h5>
                                 </div>
                                 <h4 class="pt-2">Shirt</h5>
-                                <p style="font-size: 16px;">Rp259.000</p>
+                                <p style="font-size: 16px;">Rp239.000</p>
                             </div>
                             <!-- Item 4 -->
                             <div id="items" data-bs-toggle="modal" data-bs-target="#buy6" class="container">
@@ -139,7 +140,7 @@
                                     <h5 id="color-square" style="background-color: rgb(9, 5, 32);"></h5>
                                 </div>
                                 <h4 class="pt-2">Jumpsuit</h5>
-                                <p style="font-size: 16px;">Rp259.000</p>
+                                <p style="font-size: 16px;">Rp399.000</p>
                             </div>
             </div>
 
@@ -273,15 +274,15 @@
                 </div>
               </div>
               <div class="col-3">
-                <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
+                <h6 id="cartItemprice" class="cart-price">Rp599.000</h6>
               </div>
           </div>
         </div>
         </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i> Add to Favorites</button>
-          <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i> Add to Favorites</button>
+          <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
         </div>
       </div>
     </div>
@@ -318,16 +319,16 @@
                 </div>
               </div>
               <div class="col-3">
-                <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
+                <h6 id="cartItemprice" class="cart-price">Rp359.000</h6>
               </div>
           </div>
         </div>
         </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i></button>
           <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-          <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+          <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
         </div>
       </div>
     </div>
@@ -372,9 +373,9 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i></button>
               <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-              <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+              <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
         </div>
@@ -412,16 +413,16 @@
                       </div>
                     </div>
                     <div class="col-3">
-                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
+                      <h6 id="cartItemprice" class="cart-price">Rp389.000</h6>
                     </div>
                 </div>
               </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i></button>
               <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-              <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+              <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
         </div>
@@ -458,16 +459,16 @@
                       </div>
                     </div>
                     <div class="col-3">
-                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
+                      <h6 id="cartItemprice" class="cart-price">Rp239.000</h6>
                     </div>
                 </div>
               </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i></button>
               <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-              <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+              <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
         </div>
@@ -505,16 +506,16 @@
                       </div>
                     </div>
                     <div class="col-3">
-                      <h6 id="cartItemprice" class="cart-price">Rp259.000</h6>
+                      <h6 id="cartItemprice" class="cart-price">Rp399.000</h6>
                     </div>
                 </div>
               </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"><i class="bi bi-heart"></i></button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#favorite"><i class="bi bi-heart"></i></button>
               <button type="button" class="addToCartButton btn btn-dark"><i class="bi bi-cart"></i> Add to Cart!</button>
-              <button type="button" class="btn btn-success"><i class="bi bi-bag"></i> Buy Now!</button>
+              <button type="button" class="btn btn-success" onclick="location.href = 'checkout.html'"><i class="bi bi-bag"></i> Buy Now!</button>
             </div>
           </div>
         </div>
@@ -522,6 +523,35 @@
 
 </section>
 
+<!-- Add to Favorite Modal -->
+<section>
+  <div class="modal fade" id="favorite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel"><i class="bi bi-box-arrow-in-right" style="color: blue;"></i> Login</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
+            <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+            <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-link" style="text-decoration: none; color: #383838;"><i class='bx bxl-facebook'></i> Login with Facebook</button>
+          <button type="button" class="btn btn-link" style="text-decoration: none; color: #383838;"><i class='bx bxl-google'></i> Login with Google</button>
+          <button type="button" class="btn btn-link" style="text-decoration: none; color: #383838;"><i class='bx bxs-phone' ></i> Login with Phone Number</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- End Of Add to Favorite Modal-->
 
 <!-- Increment Decrement -->
 <script>
